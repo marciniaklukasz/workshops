@@ -14,11 +14,7 @@ import datetime
 oddane = int(input("W jaki dzień tygodnia oddajesz buty? Podaj numer dnia tygodnia od 1 do 7: "))
 dlugosc = int(input("Ile dni będzie trwała naprawa, licząc od dnia kolejnego: "))
 
-tydzien = ["poniedziałek","wtorek", "środe", "czwartek", "piątek", "sobote", "niedziele"]
-oddany_slownie = tydzien[oddane-1]
-doodbioru = oddane+dlugosc
-nowy = doodbioru-7
-if dlugosc > 7:
-    print(f"Oddajesz buty w {tydzien[oddane-1]}, zapraszam w {tydzien[nowy-1]}.")
-else:
-    print(f"Oddajesz buty w {tydzien[oddane-1]}, zapraszam w {tydzien[nowy-1]}.")
+dni_tygodnia = ["poniedziałek","wtorek", "środe", "czwartek", "piątek", "sobote", "niedziele"]
+dzien_odbioru = (oddane + dlugosc - 1) % 7
+
+print (f"Oddajesz buty w {dni_tygodnia[oddane - 1]}, zapraszam w {dni_tygodnia[dzien_odbioru]}.")
