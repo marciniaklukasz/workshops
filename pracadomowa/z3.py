@@ -6,3 +6,14 @@ Np. dla parametru 3 powinno się wypisać:
 ***
 *****
 """
+
+ile = int(input("Ile rzedow: "))
+
+for i in range(ile):
+    gwiazdki = '*' * (i + 1)
+    dlugosc = len(gwiazdki)
+    print(gwiazdki.center(10))
+
+
+
+
