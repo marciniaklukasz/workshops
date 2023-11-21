@@ -7,9 +7,9 @@ Pierwiastek kwadratowy to funkcja sqrt z modułu math, można też podnieść do
 """
 import math
 
-boka = int(input ("Podaj bok trójkata A: "))
-bokb = int(input ("Podaj bok trójkata B: "))
-bokc = int(input ("Podaj bok trójkata C: "))
+boka = float(input ("Podaj bok trójkata A: "))
+bokb = float(input ("Podaj bok trójkata B: "))
+bokc = float(input ("Podaj bok trójkata C: "))
 
 """Warunek istnienia trójkąta, nazywany również nierównością trójkąta, mówi, 
 że suma długości dowolnych dwóch boków trójkąta musi być większa niż długość trzeciego boku.
