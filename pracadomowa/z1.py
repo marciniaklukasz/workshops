@@ -19,6 +19,6 @@ oddany_slownie = tydzien[oddane-1]
 doodbioru = oddane+dlugosc
 nowy = doodbioru-7
 if dlugosc > 7:
-    print(f"Oddajesz buty w {tydzien[oddane]}, zapraszam w {tydzien[nowy - 1]}.")
+    print(f"Oddajesz buty w {tydzien[oddane-1]}, zapraszam w {tydzien[nowy-1]}.")
 else:
-    print(f"Oddajesz buty w {oddany_slownie}, zapraszam w {tydzien[nowy-1]}.")
+    print(f"Oddajesz buty w {tydzien[oddane-1]}, zapraszam w {tydzien[nowy-1]}.")
