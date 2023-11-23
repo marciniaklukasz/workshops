@@ -53,3 +53,4 @@ else:
 
 
 #notfinal
+#dopisac jeszcze "ok, nie chcesz malowania, ale chcesz .. ? "
