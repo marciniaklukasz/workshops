@@ -48,3 +48,8 @@ if usa in ["y", "t"]:
         print(f"Łączny koszt: {koszt_gipsowania} zł")
 else:
     print("Nie wybrano żadnej usługi.")
+
+
+
+
+#notfinal
