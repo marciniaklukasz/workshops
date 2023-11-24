@@ -16,80 +16,44 @@ print(f"Pole powierzchni podłogi i sufitu wynosi po {ppow} m2. \n"
 
 # Usługi
 
-
-
 koszt_gipsowania = 0
 koszt_malowania = 0
 koszt_listwy = 0
 koszt_paneli = 0
 
-g = input("Czy gipsujemy sciany? (t/n)")
+g = input("Czy gipsujemy ściany oraz sufit? (t/n)")
 if g in ["y", "t"]:
     koszt_gipsowania = ppows * 100
+m = input("Czy malujemy ściany oraz sufit? (t/n)")
+if m in ["y", "t"]:
+    koszt_malowania = ppows * 30
+p = input("Czy kładziemy panele? (t/n)")
+if p in ["y", "t"]:
+    koszt_paneli = ppow * 50
+l = input("Czy kładziemy listwy? (t/n)")
+if l in ["y", "t"]:
+    koszt_listwy = obw * 40
 
+suma = koszt_paneli+koszt_listwy+koszt_gipsowania+koszt_malowania
 
-usa = input("Czy gipsujemy ściany? (t/n): ")
-if usa in ["y", "t"]:
-    koszt_gipsowania = ppows * 100
-    print(f"Super, gipsujemy ściany, przy podanych parametrach cena za usługę: {koszt_gipsowania} zł.")
-    usb = input("Czy malujemy ściany i sufit? (t/n): ")
-    if usb in ["y", "t"]:
-        koszt_malowania = ppows * 30
-        print(f"Malujemy, więc do ceny doliczamy: {koszt_malowania} zł.")
-        koszt_gipsowania_malowania = koszt_gipsowania + koszt_malowania
-        usc = input("Czy kładziemy panele podłogowe? (t/n): ")
-        if usc in ["y", "t"]:
-            koszt_paneli = ppow * 50
-            koszt_gipsowania_malowania_paneli = koszt_gipsowania_malowania + koszt_paneli
-            usd = input("Czy kładziemy listwy przypodłogowe? (t/n): ")
-            if usd in ["y", "t"]:
-                koszt_listew = obw * 40
-                koszt_koncowy = koszt_gipsowania_malowania_paneli + koszt_listew
-                koszt_koncowy_znizka = koszt_koncowy * 0.9
-                print(f"Super, za kompleksową usługę dostajesz 10% zniżki! \n"
-                      f"Łącznie wyszło: \n"
-                      f"    - Gipsowanie: {koszt_gipsowania} zł \n"
-                      f"    - Malowanie: {koszt_malowania} zł \n"
-                      f"    - Panele podłogowe: {koszt_paneli} zł \n"
-                      f"    - Listwy przypodłogowe: {koszt_listew} zł \n"
-                      f"Suma po zniżce: {koszt_koncowy_znizka:.2f} zł")
-            else:
-                print(f"Łączny koszt: {koszt_gipsowania_malowania_paneli} zł")
-        else:
-            print(f"Łączny koszt: {koszt_gipsowania_malowania} zł")
-    else:
-        print(f"Łączny koszt: {koszt_gipsowania} zł")
-elif usa in ["n", "f"]:
-    usb = input ("Rozumiem, czy wybierasz cos innego, np malujemy ściany i sufit? (t/n): ")
-    if usb in ["y", "t"]:
-        koszt_malowania = ppows * 30
-        print (f"Malujemy, więc do ceny doliczamy: {ppows} x 30 => {koszt_malowania} zł.")
-    elif usb in ["n", "f"]:
-        usc = input ("Ok, a cz kładziemy panele podłogowe? (t/n): ")
-        if usc in ["y", "t"]:
-            koszt_paneli = ppow * 50
-            print (f"Kladziemy panele, wiec do ceny doliczamy: {ppow} x 50 => {koszt_paneli} zł.")
-            usd = input ("Ok, idziemy dalej, czy kładziemy listwy przypodłogowe? (t/n): ")
-            if usd in ["y", "t"]:
-                koszt_listew = obw * 40
-                print (f"Super, za kompleksową usługę dostajesz 10% zniżki! \n"
-                       f"Łącznie wyszło: \n"
-                       f"    - Gipsowanie: {koszt_gipsowania} zł \n"
-                       f"    - Malowanie: {koszt_malowania} zł \n"
-                       f"    - Panele podłogowe: {koszt_paneli} zł \n"
-                       f"    - Listwy przypodłogowe: {koszt_listew} zł \n"
-                       f"Suma po zniżce: {koszt_koncowy_znizka:.2f} zł")
-            else:
-                print (f"Łączny koszt: {koszt_gipsowania_malowania_paneli} zł")
-        else:
-            print (f"Łączny koszt: {koszt_gipsowania_malowania} zł")
-    else:
-        print (f"Łączny koszt: {koszt_gipsowania} zł")
+if g in ["y", "t"] and m in ["y", "t"] and p in ["y", "t"] and l in ["y", "t"]:
+    suma_po_rabacie = float(suma*.99)
+    rabat = float(suma*.01)
+    print(f"\nZa kompleksowa usługę dostajesz rabat! Caly 1%! (Taki black friday!)\n")
+    print(f"Podsumowanie:\n"
+      f"Koszt gipsowania: {koszt_gipsowania} zł\n"
+      f"Koszt malowania: {koszt_malowania} zł\n"
+      f"Koszt paneli: {koszt_paneli} zł\n"
+      f"Koszt gipsowania: {koszt_listwy} zł\n\n"
+      f"------------------------------------\n\n"
+      f"Razem: {suma:.2f} zł\n"
+      f"Rabat: {rabat:.2f} zł\n"
+      f"Razem po rabacie: {suma_po_rabacie:.2f} zł")
 else:
-    print("Nie wybrano żadnej usługi.")
-
-
-
-
-#notfinal
-#dopisac jeszcze "ok, nie chcesz malowania, ale chcesz .. ? "
+    print(f"\nPodsumowanie:\n"
+          f"Koszt gipsowania: {koszt_gipsowania} zł\n"
+          f"Koszt malowania: {koszt_malowania} zł\n"
+          f"Koszt paneli: {koszt_paneli} zł\n"
+          f"Koszt gipsowania: {koszt_listwy} zł\n\n"
+          f"------------------------------------\n\n"
+          f"Razem: {suma:.2f} zł\n")
