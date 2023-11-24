@@ -36,6 +36,7 @@ if l in ["y", "t"]:
 
 suma = koszt_paneli+koszt_listwy+koszt_gipsowania+koszt_malowania
 
+
 if g in ["y", "t"] and m in ["y", "t"] and p in ["y", "t"] and l in ["y", "t"]:
     suma_po_rabacie = float(suma*.99)
     rabat = float(suma*.01)
