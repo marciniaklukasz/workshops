@@ -10,7 +10,7 @@ Umiejętnie ją stosując powinno się te zagadki rozwiązywać w 9-10 próbach 
 """
 from random import randint
 
-x = randint (1, 10)
+x = randint (1, 999)
 krok = 0
 while True:
     gg = int (input ("Podaj liczbe wariacie: "))
