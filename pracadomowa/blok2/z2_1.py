@@ -53,4 +53,6 @@ if lista_zakupow:
 print ("-"*10)
 print (f"Suma to:{suma:>22.2f} zl")
 
+#1903 - 05122023
+
 
